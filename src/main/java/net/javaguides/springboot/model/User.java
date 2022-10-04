@@ -1,5 +1,6 @@
 package net.javaguides.springboot.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,6 +20,7 @@ public class User {
 	private long id;
 	
 	@Pattern(regexp = "^[0-9]{10}$")
+	@Column(unique = true)
 	private String taxno;
 	
 	@NotEmpty
