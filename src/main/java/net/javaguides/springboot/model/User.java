@@ -8,7 +8,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Pattern;
+
+import net.javaguides.springboot.annotations.TaxValidation;
+
 
 
 @Table(name="users")
@@ -19,7 +21,7 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	@Pattern(regexp = "^[0-9]{10}$")
+	@TaxValidation
 	@Column(unique = true)
 	private String taxno;
 	
